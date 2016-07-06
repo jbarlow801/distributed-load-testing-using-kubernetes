@@ -40,7 +40,7 @@ spec:
               value: master
             - name: TARGET_HOST
               key: TARGET_HOST
-              value: http://workload-simulation-webapp.appspot.com
+              value: https://api.int.panda.dpccloud.com
           ports:
             - name: loc-master-web
               containerPort: 8089

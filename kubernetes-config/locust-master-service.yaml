@@ -22,7 +22,7 @@ metadata:
     role: master
 spec:
   ports:
-    - port: 8089
+    - port: 8000
       targetPort: loc-master-web
       protocol: TCP
       name: loc-master-web

@@ -28,15 +28,12 @@ class MetricsTaskSet(TaskSet):
         self._deviceid = str(uuid.uuid4())
 
     @task(1)
-    def login(self):
-        self.client.post(
-            '/login', {"deviceid": self._deviceid})
+    def files_1st(self):
+        self.client.get("/devops/forwarder/forward?uri=/files/1")
 
-    @task(999)
-    def post_metrics(self):
-        self.client.post(
-            "/metrics", {"deviceid": self._deviceid, "timestamp": datetime.now()})
-
+    @task(24)
+    def files_25th(self):
+        self.client.get("/devops/forwarder/forward?uri=/files/25")
 
 class MetricsLocust(HttpLocust):
     task_set = MetricsTaskSet
