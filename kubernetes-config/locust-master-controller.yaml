@@ -33,7 +33,7 @@ spec:
     spec:
       containers:
         - name: locust
-          image: gcr.io/cloud-solutions-images/locust-tasks:latest
+          image: jbarlow801/distributed-load-testing-using-kubernetes
           env:
             - name: LOCUST_MODE
               key: LOCUST_MODE
