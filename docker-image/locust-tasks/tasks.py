@@ -51,7 +51,7 @@ class MetricsTaskSet(TaskSet):
     def files_98th(self):
         self.client.get("/devops/forwarder/forward?uri=/files/98")
 
-   @task(1)
+    @task(1)
     def files_99th(self):
         self.client.get("/devops/forwarder/forward?uri=/files/99")
 
@@ -79,7 +79,7 @@ class MetricsTaskSet(TaskSet):
     def memory_98th(self):
         self.client.get("/devops/forwarder/forward?uri=/memory/98")
 
-   @task(1)
+    @task(1)
     def memory_99th(self):
         self.client.get("/devops/forwarder/forward?uri=/memory/99")
 
