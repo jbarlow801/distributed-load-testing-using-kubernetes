@@ -35,5 +35,53 @@ class MetricsTaskSet(TaskSet):
     def files_25th(self):
         self.client.get("/devops/forwarder/forward?uri=/files/25")
 
+    @task(25)
+    def files_50th(self):
+        self.client.get("/devops/forwarder/forward?uri=/files/50")
+
+    @task(25)
+    def files_75th(self):
+        self.client.get("/devops/forwarder/forward?uri=/files/75")
+
+    @task(20)
+    def files_95th(self):
+        self.client.get("/devops/forwarder/forward?uri=/files/95")
+
+    @task(3)
+    def files_98th(self):
+        self.client.get("/devops/forwarder/forward?uri=/files/98")
+
+   @task(1)
+    def files_99th(self):
+        self.client.get("/devops/forwarder/forward?uri=/files/99")
+
+    @task(1)
+    def memory_1st(self):
+        self.client.get("/devops/forwarder/forward?uri=/memory/1")
+
+    @task(24)
+    def memory_25th(self):
+        self.client.get("/devops/forwarder/forward?uri=/memory/25")
+
+    @task(49)
+    def memory_50th(self):
+        self.client.get("/devops/forwarder/forward?uri=/memory/50")
+
+    @task(25)
+    def memory_75th(self):
+        self.client.get("/devops/forwarder/forward?uri=/memory/75")
+
+    @task(20)
+    def memory_95th(self):
+        self.client.get("/devops/forwarder/forward?uri=/memory/95")
+
+    @task(3)
+    def memory_98th(self):
+        self.client.get("/devops/forwarder/forward?uri=/memory/98")
+
+   @task(1)
+    def memory_99th(self):
+        self.client.get("/devops/forwarder/forward?uri=/memory/99")
+
 class MetricsLocust(HttpLocust):
     task_set = MetricsTaskSet
