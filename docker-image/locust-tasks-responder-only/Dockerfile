@@ -22,7 +22,7 @@ MAINTAINER Sandeep Parikh <parikhs@google.com>
 ADD licenses /licenses
 
 # Add the external tasks directory into /tasks
-ADD files /locust-tasks-responder-only
+ADD files /locust-tasks
 
 # Install the required dependencies via pip
 RUN pip install -r requirements.txt
@@ -31,7 +31,7 @@ RUN pip install -r requirements.txt
 EXPOSE 5557 5558 8089
 
 # Set script to be executable
-RUN chmod 755 /locust-tasks-responder-only/run.sh
+RUN chmod 755 /files/run.sh
 
 # Start Locust using LOCUS_OPTS environment variable
-ENTRYPOINT ["/locust-tasks-responder-only/run.sh"] 
+ENTRYPOINT ["/files/run.sh"] 
