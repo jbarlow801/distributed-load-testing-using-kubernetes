@@ -32,7 +32,7 @@ RUN pip install -r requirements.txt
 EXPOSE 5557 5558 8089
 
 # Set script to be executable
-RUN chmod 755 /files/run.sh
+RUN chmod 755 /locust-tasks/run.sh
 
 # Start Locust using LOCUS_OPTS environment variable
-ENTRYPOINT ["/files/run.sh"] 
+ENTRYPOINT ["/locust-tasks/run.sh"] 
