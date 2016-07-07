@@ -19,7 +19,8 @@ import uuid
 
 from datetime import datetime
 from locust import HttpLocust, TaskSet, task
-
+str_user_agent = 'locust-responder-only'
+headers = { 'User-Agent': str_user_agent }
 
 class MetricsTaskSet(TaskSet):
     _deviceid = None
@@ -29,59 +30,59 @@ class MetricsTaskSet(TaskSet):
 
     @task(1)
     def files_1st(self):
-        self.client.get("/devops/responder/files/1")
+        self.client.get("/devops/responder/files/1", headers=headers)
 
     @task(24)
     def files_25th(self):
-        self.client.get("/devops/responder/files/25")
+        self.client.get("/devops/responder/files/25", headers=headers)
 
     @task(25)
     def files_50th(self):
-        self.client.get("/devops/responder/files/50")
+        self.client.get("/devops/responder/files/50", headers=headers)
 
     @task(25)
     def files_75th(self):
-        self.client.get("/devops/responder/files/75")
+        self.client.get("/devops/responder/files/75", headers=headers)
 
     @task(20)
     def files_95th(self):
-        self.client.get("/devops/responder/files/95")
+        self.client.get("/devops/responder/files/95", headers=headers)
 
     @task(3)
     def files_98th(self):
-        self.client.get("/devops/responder/files/98")
+        self.client.get("/devops/responder/files/98", headers=headers)
 
     @task(1)
     def files_99th(self):
-        self.client.get("/devops/responder/files/99")
+        self.client.get("/devops/responder/files/99", headers=headers)
 
     @task(1)
     def memory_1st(self):
-        self.client.get("/devops/responder/memory/1")
+        self.client.get("/devops/responder/memory/1", headers=headers)
 
     @task(24)
     def memory_25th(self):
-        self.client.get("/devops/responder/memory/25")
+        self.client.get("/devops/responder/memory/25", headers=headers)
 
     @task(49)
     def memory_50th(self):
-        self.client.get("/devops/responder/memory/50")
+        self.client.get("/devops/responder/memory/50", headers=headers)
 
     @task(25)
     def memory_75th(self):
-        self.client.get("/devops/responder/memory/75")
+        self.client.get("/devops/responder/memory/75", headers=headers)
 
     @task(20)
     def memory_95th(self):
-        self.client.get("/devops/responder/memory/95")
+        self.client.get("/devops/responder/memory/95", headers=headers)
 
     @task(3)
     def memory_98th(self):
-        self.client.get("/devops/responder/memory/98")
+        self.client.get("/devops/responder/memory/98", headers=headers)
 
     @task(1)
     def memory_99th(self):
-        self.client.get("/devops/responder/memory/99")
+        self.client.get("/devops/responder/memory/99", headers=headers)
 
 class MetricsLocust(HttpLocust):
     task_set = MetricsTaskSet
