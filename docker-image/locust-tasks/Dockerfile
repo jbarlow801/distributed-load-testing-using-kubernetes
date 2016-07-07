@@ -21,12 +21,13 @@ MAINTAINER Sandeep Parikh <parikhs@google.com>
 # Add the licenses for third party software and libraries
 ADD licenses /licenses
 
-# Add the external tasks directory into /tasks
-ADD files /locust-tasks
+# Install the required dependencies via pip
 ADD requirements.txt /requirements.txt
 
-# Install the required dependencies via pip
 RUN pip install -r requirements.txt
+
+# Add the external tasks directory into /tasks
+ADD files /locust-tasks
 
 # Expose the required Locust ports
 EXPOSE 5557 5558 8089
@@ -35,4 +36,4 @@ EXPOSE 5557 5558 8089
 RUN chmod 755 /locust-tasks/run.sh
 
 # Start Locust using LOCUS_OPTS environment variable
-ENTRYPOINT ["/locust-tasks/run.sh"] 
+ENTRYPOINT ["/locust-tasks/run.sh"]
