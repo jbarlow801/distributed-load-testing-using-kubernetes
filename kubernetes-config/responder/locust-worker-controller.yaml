@@ -41,7 +41,7 @@ spec:
               value: worker
             - name: LOCUST_MASTER
               key: LOCUST_MASTER
-              value: locust-master
+              value: locust-master-responder
             - name: TARGET_HOST
               key: TARGET_HOST
               value: https://api.int.panda.dpccloud.com
