@@ -33,7 +33,7 @@ spec:
     spec:
       containers:
         - name: locust
-          image: jbarlow801/distributed-load-testing-using-kubernetes:latest
+          image: jbarlow801/distributed-load-testing-using-kubernetes:responder
           env:
             - name: LOCUST_MODE
               key: LOCUST_MODE
