@@ -16,7 +16,7 @@
 kind: ReplicationController
 apiVersion: v1
 metadata:
-  name: locust-worker
+  name: locust-worker-responder
   labels:
     name: locust
     role: worker

@@ -16,7 +16,7 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: locust-master
+  name: locust-master-responder
   labels:
     name: locust
     role: master

@@ -22,7 +22,7 @@ MAINTAINER Sandeep Parikh <parikhs@google.com>
 ADD licenses /licenses
 
 # Add the external tasks directory into /tasks
-ADD locust-tasks /locust-tasks-responder-only
+ADD files /locust-tasks-responder-only
 
 # Install the required dependencies via pip
 RUN pip install -r /locust-tasks/requirements.txt
