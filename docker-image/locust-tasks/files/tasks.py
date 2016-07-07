@@ -84,5 +84,9 @@ class MetricsTaskSet(TaskSet):
     def memory_99th(self):
         self.client.get("/devops/forwarder/forward?uri=/memory/99", headers=headers)
 
+    @task(25)
+    def status(self):
+        self.client.get("/devops/forwarder/status", headers=headers)
+
 class MetricsLocust(HttpLocust):
     task_set = MetricsTaskSet
