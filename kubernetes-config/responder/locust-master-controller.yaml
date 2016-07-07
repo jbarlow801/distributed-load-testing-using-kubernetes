@@ -17,6 +17,7 @@ kind: ReplicationController
 apiVersion: v1
 metadata:
   name: locust-master-responder
+  namespace: responder
   labels:
     name: locust-responder
     role: master-responder
