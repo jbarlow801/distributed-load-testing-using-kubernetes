@@ -23,6 +23,7 @@ ADD licenses /licenses
 
 # Add the external tasks directory into /tasks
 ADD files /locust-tasks
+ADD requirements.txt /requirements.txt
 
 # Install the required dependencies via pip
 RUN pip install -r requirements.txt
