@@ -19,7 +19,7 @@ import uuid
 
 from datetime import datetime
 from locust import HttpLocust, TaskSet, task
-str_user_agent = 'locust'
+str_user_agent = 'locust-forwarder'
 headers = { 'User-Agent': str_user_agent }
 
 class MetricsTaskSet(TaskSet):
