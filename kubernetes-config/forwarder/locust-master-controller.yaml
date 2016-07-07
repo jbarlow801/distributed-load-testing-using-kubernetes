@@ -16,7 +16,7 @@
 kind: ReplicationController
 apiVersion: v1
 metadata:
-  name: locust-master-responder
+  name: locust-master
   labels:
     name: locust
     role: master
@@ -33,7 +33,7 @@ spec:
     spec:
       containers:
         - name: locust
-          image: jbarlow801/distributed-load-testing-using-kubernetes:responder
+          image: jbarlow801/distributed-load-testing-using-kubernetes:forwarder
           env:
             - name: LOCUST_MODE
               key: LOCUST_MODE

@@ -16,38 +16,31 @@
 kind: ReplicationController
 apiVersion: v1
 metadata:
-  name: locust-master-responder
+  name: locust-worker
   labels:
     name: locust
-    role: master
+    role: worker
 spec:
-  replicas: 1
+  replicas: 10
   selector:
     name: locust
-    role: master
+    role: worker
   template:
     metadata:
       labels:
         name: locust
-        role: master
+        role: worker
     spec:
       containers:
         - name: locust
-          image: jbarlow801/distributed-load-testing-using-kubernetes:responder
+          image: jbarlow801/distributed-load-testing-using-kubernetes:forwarder
           env:
             - name: LOCUST_MODE
               key: LOCUST_MODE
-              value: master
+              value: worker
+            - name: LOCUST_MASTER
+              key: LOCUST_MASTER
+              value: locust-master
             - name: TARGET_HOST
               key: TARGET_HOST
               value: https://api.int.panda.dpccloud.com
-          ports:
-            - name: loc-master-web
-              containerPort: 8089
-              protocol: TCP
-            - name: loc-master-p1
-              containerPort: 5557
-              protocol: TCP
-            - name: loc-master-p2
-              containerPort: 5558
-              protocol: TCP
