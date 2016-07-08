@@ -64,7 +64,7 @@ class MetricsTaskSet(TaskSet):
     def memory_25th(self):
         self.client.get("/devops/responder/memory/25", headers=headers)
 
-    @task(49)
+    @task(25)
     def memory_50th(self):
         self.client.get("/devops/responder/memory/50", headers=headers)
 
